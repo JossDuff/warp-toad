@@ -286,7 +286,10 @@ describe("AztecWarpToad", function () {
                 commitmentPreImg1.secret,
             )
             //await generateNoirTest(proofInputs);
+            const startProofTime = Date.now()
             const proof = await createProof(proofInputs, os.cpus().length)
+            const endProofTime = Date.now()
+            console.log({proofTime: startProofTime-endProofTime})
 
             const balanceRecipientPreMint = await L1WarpToad.balanceOf(await evmRecipient.getAddress())
             const mintTx = await (await L1WarpToad.mint(

@@ -145,9 +145,14 @@ test L1->L1
 yarn workspace @warp-toad/backend hardhat test test/testL1ToL1.ts --network aztecSandbox
 ```
 
-test EVERYTHING
+test EVERYTHING (will break because anvil cant handle gas test)
 ```shell
 yarn workspace @warp-toad/backend hardhat test --network aztecSandbox
+```
+
+test EVERYTHING (will break because anvil cant handle gas test)
+```shell
+yarn workspace @warp-toad/backend hardhat test test/testGasBurn.ts
 ```
 
 get gas estimation minting (broken)
